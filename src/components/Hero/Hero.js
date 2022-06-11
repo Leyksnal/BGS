@@ -7,11 +7,11 @@ export default function Hero() {
       <Background>
         <img src='/assets/hero.png' alt="" />
       </Background>
-      <Content>
-        <Tag>
+      {/* <Content> */}
+        {/* <Tag> */}
           <Info>We deliver innovative solutions for value driven project</Info>
-        </Tag>
-      </Content>
+        {/* </Tag> */}
+      {/* </Content> */}
     </Container>
   )
 }
@@ -29,14 +29,8 @@ position: relative;
 align-items: center;
 
 @media screen and (max-width: 768px){
-  height: calc(100vh - 300px);
+  height: calc(100vh - 220px);
 }
-`;
-const Content = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-height: 100vh;
 `;
 const Background = styled.div`
 top: 0;
@@ -53,26 +47,23 @@ img{
 
   @media screen and (max-width: 768px){
     width: 100%;
-    height: 300px;
+    height: 500px;
   }
 }
 
-`;
-const Tag = styled.div`
-margin-top: 180px;
-width: 800px;
-
 @media screen and (max-width: 768px){
-  margin-top: 90px;
-  width: 300px;
-}
+    
+  }
+
 `;
 const Info = styled.div`
 font-size: 2.5rem;
 text-align: center;
+width: 800px;
 
 @media screen and (max-width: 768px){
   font-size: 1.2rem;
+  width: 300px;
 
 }
 `;
