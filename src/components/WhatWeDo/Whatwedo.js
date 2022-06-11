@@ -19,6 +19,10 @@ display: flex;
 justify-content: center;
 align-items: center;
 width: 100%;
+
+@media screen and (max-width: 768px){
+  margin-top: -120px;
+}
 `;
 const Title = styled.div`
 margin-top: 20px;
