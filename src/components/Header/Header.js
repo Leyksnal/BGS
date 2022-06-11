@@ -18,6 +18,8 @@ export default function Header() {
           <Action to={'/about'}><Button>About us</Button></Action>
           <Action to={'/project'}><Button>Project</Button></Action>
           <Action to={'/contact'}><Button>Contact</Button></Action>
+          <Action to={'/post'}><Button>Post</Button></Action>
+          <Action to={'/register'}><Button>Login</Button></Action>
         </Press>
         <Tog>
           <Icon0 id='menu' onClick={() =>{
@@ -37,6 +39,8 @@ export default function Header() {
             <Cal to={'/about'}><Button>About us</Button></Cal>
             <Cal to={'/project'}><Button>Project</Button></Cal>
             <Cal to={'/contact'}><Button>Contact</Button></Cal>
+            <Cal to={'/post'}><Button>Post</Button></Cal>
+            <Cal to={'/register'}><Button>Login</Button></Cal>
         </Sidebar>
       </Wrapper>
     </Container>

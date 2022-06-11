@@ -1,9 +1,9 @@
 import React from 'react'
 import  styled from 'styled-components'
 
-export default function WhoCard({mgn, mgnM}) {
+export default function WhoCard({mgn, mgnM, bg}) {
   return (
-    <Wrapper mgn={mgn} mgnM={mgnM}>
+    <Wrapper mgn={mgn} mgnM={mgnM} bg={bg}>
         <Title>Who we are</Title>
         <Span>As the first road link between Bonny Island to the rest of Rivers State, the Bodo-Bonny road is a milestone infrastructure development project for the advancement of the Niger</Span>
         <Line2></Line2>
@@ -20,6 +20,7 @@ text-align: center;
 width: max-content;
 border: 2px solid #3E635B;
 margin: ${({mgn}) => mgn};
+background-color: ${({bg}) => bg};
 border-radius: 8px;
 
 @media screen and (max-width: 768px){
