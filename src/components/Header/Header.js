@@ -19,7 +19,7 @@ export default function Header() {
           <Action to={'/project'}><Button>Project</Button></Action>
           <Action to={'/contact'}><Button>Contact</Button></Action>
           <Action to={'/post'}><Button>Post</Button></Action>
-          <Action to={'/register'}><Button>Login</Button></Action>
+          <Action to={'/login'}><Button>Login</Button></Action>
         </Press>
         <Tog>
           <Icon0 id='menu' onClick={() =>{
@@ -35,12 +35,42 @@ export default function Header() {
               document.getElementById("close").style.display = "none";
               document.getElementById("close").style.transition = "all 300ms";
             }} />
-            <Cal to={'/'}><Button>Home</Button></Cal>
-            <Cal to={'/about'}><Button>About us</Button></Cal>
-            <Cal to={'/project'}><Button>Project</Button></Cal>
-            <Cal to={'/contact'}><Button>Contact</Button></Cal>
-            <Cal to={'/post'}><Button>Post</Button></Cal>
-            <Cal to={'/register'}><Button>Login</Button></Cal>
+            <Cal to={'/'} id='close' onClick={() =>{
+              document.getElementById("sidebar").style.width = "0";
+              document.getElementById("menu").style.display = "block";
+              document.getElementById("close").style.display = "none";
+              document.getElementById("close").style.transition = "all 300ms";
+            }}><Button>Home</Button></Cal>
+            <Cal to={'/about'} id='close' onClick={() =>{
+              document.getElementById("sidebar").style.width = "0";
+              document.getElementById("menu").style.display = "block";
+              document.getElementById("close").style.display = "none";
+              document.getElementById("close").style.transition = "all 300ms";
+            }}><Button>About us</Button></Cal>
+            <Cal to={'/project'} id='close' onClick={() =>{
+              document.getElementById("sidebar").style.width = "0";
+              document.getElementById("menu").style.display = "block";
+              document.getElementById("close").style.display = "none";
+              document.getElementById("close").style.transition = "all 300ms";
+            }}><Button>Project</Button></Cal>
+            <Cal to={'/contact'} id='close' onClick={() =>{
+              document.getElementById("sidebar").style.width = "0";
+              document.getElementById("menu").style.display = "block";
+              document.getElementById("close").style.display = "none";
+              document.getElementById("close").style.transition = "all 300ms";
+            }}><Button>Contact</Button></Cal>
+            <Cal to={'/post'} id='close' onClick={() =>{
+              document.getElementById("sidebar").style.width = "0";
+              document.getElementById("menu").style.display = "block";
+              document.getElementById("close").style.display = "none";
+              document.getElementById("close").style.transition = "all 300ms";
+            }}><Button>Post</Button></Cal>
+            <Cal to={'/login'} id='close' onClick={() =>{
+              document.getElementById("sidebar").style.width = "0";
+              document.getElementById("menu").style.display = "block";
+              document.getElementById("close").style.display = "none";
+              document.getElementById("close").style.transition = "all 300ms";
+            }}><Button>Login</Button></Cal>
         </Sidebar>
       </Wrapper>
     </Container>

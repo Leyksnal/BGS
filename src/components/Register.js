@@ -1,12 +1,15 @@
 import React from 'react'
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import axios from 'axios';
 import { useForm } from 'react-hook-form'
+import Swal from 'sweetalert2';
 
 export default function Register() {
+
+    const navigate = useNavigate()
 
   const formSchema =yup.object().shape({
     fullName: yup.string().required("This field cannot be empty*"),
@@ -27,9 +30,9 @@ export default function Register() {
 
   const onSumb = handleSubmit(async (value) =>{
     const { fullName, email, password } = value
-    const mode = "http://localhost:3334/"
+    const mode = "https://bgs-backend-app.herokuapp.com/"
 
-    const url = `${mode}api/user/register`
+    const url = `${mode}api/admin/register`
 
     const formData = new FormData()
     formData.append("fullName", fullName)
@@ -40,6 +43,14 @@ export default function Register() {
     console.log(res);
   })
 
+  Swal.fire(
+    'Good job!',
+    'You clicked the button!',
+    'success'
+  )
+
+  navigate('/project')
+
   })
 
 
@@ -48,7 +59,7 @@ export default function Register() {
     <Container>
       <Wrapper >
         <Gr>Create An Account</Gr>
-        <Form onSubmit={onSumb} type="multipart/form-data">
+        <Form onSubmit={onSumb}>
           <Error>{errors.fullName?.message}</Error>
           <input type="text" placeholder='Name' {...register("fullName")}/>
           <Error>{errors.email?.message}</Error>
@@ -79,9 +90,8 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 90vh;
+  height: calc(100vh - 80px);
   color: #fff;
-  padding-top: 60px;
 `;
 const Wrapper = styled.div`
   display: flex;

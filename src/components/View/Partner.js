@@ -54,13 +54,17 @@ justify-content: center;
 align-items: center;
 width: 100%;
 flex-wrap: wrap;
+
+@media screen and (max-width: 768px){
+    flex-wrap: wrap;
+}
 `;
 const Rex = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-width: 80%;
+width: 100%;
 `;
 const Container = styled.div`
 display: flex;

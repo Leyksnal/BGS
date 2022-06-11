@@ -73,9 +73,8 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 90vh;
+  height: calc(100vh - 80px);
   color: #fff;
-  padding-top: 60px;
 `;
 const Wrapper = styled.div`
   display: flex;

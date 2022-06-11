@@ -53,6 +53,7 @@ margin: 10px;
 
 @media screen and (max-width: 768px){
     margin: 10px 5px;
+    width: 380px;
 }
 `;
 const Pop = styled.div`
@@ -61,9 +62,11 @@ justify-content: center;
 align-items: center;
 width: 100%;
 margin-top: 20px;
+flex-wrap: wrap;
 
 @media screen and (max-width: 768px){
 flex-wrap: wrap;
+flex-direction: column;
 }
 `;
 const Rex = styled.div`
@@ -71,7 +74,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-width: 80%;
+width: 100%;
 `;
 const Ava2 = styled.img`
 width: 100px;
@@ -86,6 +89,7 @@ font-size: 0.9rem;
 
 const Mes1 = styled.div`
 font-size: 1rem;
+margin-bottom: 10px;
 `;
 const Container = styled.div`
 display: flex;
