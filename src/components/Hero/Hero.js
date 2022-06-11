@@ -29,7 +29,7 @@ position: relative;
 align-items: center;
 
 @media screen and (max-width: 768px){
-  height: calc(100vh - 220px);
+  height: 500px;
 }
 `;
 const Background = styled.div`
@@ -52,7 +52,7 @@ img{
 }
 
 @media screen and (max-width: 768px){
-    
+    height: 500px;
   }
 
 `;
