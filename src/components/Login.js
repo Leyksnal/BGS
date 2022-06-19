@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import axios from 'axios';
 import { useForm } from 'react-hook-form'
+import Swal from 'sweetalert2';
 
 export default function Login() {
+
+  const navigate = useNavigate();
+	const [error, setError] = useState("");
 
   const formSchema =yup.object().shape({
     email: yup.string().email().required("This filed cnnot be empty*"),
@@ -24,19 +28,22 @@ export default function Login() {
 
 
   const onSumb = handleSubmit(async (value) =>{
-    const { email, password } = value
-    const mode = "http://localhost:3334/"
+    const mode = "https://bgs-backend-app.herokuapp.com/"
+    const url = `${mode}api/admin/signin`
 
-    const url = `${mode}api/user/register`
-
-    const formData = new FormData()
-    formData.append("email", email)
-    formData.append("password", password)
-
-  await axios.post(url, formData).then((res) =>{
-    console.log(res);
-  })
-  reset()
+  await axios.post(url, value).then(() =>{
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Welcome back on board",
+      showConfirmButton: false,
+      timer: 2500,
+    }).then(() => {
+      navigate("/");
+    });
+  }).catch((err) => {
+    setError(err.response.data.message);
+  });
 
   })
 
@@ -82,7 +89,7 @@ const Wrapper = styled.div`
   align-items: center;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   background-color: #3E635B;
-  border-radius: 20px;
+  border-radius: 5px;
 `;
 const Form = styled.form`
   display: flex;
@@ -95,15 +102,17 @@ const Form = styled.form`
     padding: 10px;
     width: 300px;
     height: 18px;
-    border-radius: 20px;
+    border-radius: 5px;
     outline: none;
     border: none;
     font-size: 0.9rem;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   }
 `;
-const Gr = styled.h2`
-
+const Gr = styled.div`
+font-size: 1.4rem;
+font-weight: 500;
+padding: 5px 0;
 `;
 const Info = styled.p`
 
@@ -114,14 +123,14 @@ const Button = styled.button`
   width: 120px;
   height:35px;
   margin: 10px;
-  border-radius: 20px;
+  border-radius: 5px;
   outline: none;
   border: 2px solid #fff;
   font-size: 1.1rem;
   background-color: transparent;
   transform: scale(1);
   transition: all 400ms;
-  font-weight: 600;
+  font-weight: 400;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   color: #fff;
 

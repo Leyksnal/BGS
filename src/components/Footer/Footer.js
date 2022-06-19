@@ -75,6 +75,7 @@ align-items: center;
 justify-content: center;
 width: 100%;
 bottom: 0;
+margin-top: 10px;
 
 @media screen and (max-width: 768px){
     height: 150px;

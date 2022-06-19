@@ -198,5 +198,5 @@ font-size: 1.2rem;
 `;
 const Bottom = styled.div`
 font-size: 0.9rem;
-width: 300px;
+width: 250px;
 `;

@@ -58,9 +58,8 @@ const Wrapper = styled.form`
   align-items: center;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   background-color: #3E635B;
-  border-radius: 10px;
+  border-radius: 5px;
   width: 400px;
-  margin: 20px 0;
 
   label{
     border: 3px solid #aaa;
@@ -96,7 +95,7 @@ const Put = styled.div`
     padding: 10px;
     width: 300px;
     height: 18px;
-    border-radius: 20px;
+    border-radius: 5px;
     outline: none;
     border: none;
     font-size: 0.9rem;
@@ -131,14 +130,14 @@ const Button = styled.button`
   width: 120px;
   height:35px;
   margin: 10px;
-  border-radius: 20px;
+  border-radius: 5px;
   outline: none;
   border: 2px solid #fff;
   font-size: 1.1rem;
   background-color: transparent;
   transform: scale(1);
   transition: all 400ms;
-  font-weight: 600;
+  font-weight: 400;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   color: #fff;
 
